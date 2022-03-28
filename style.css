@@ -1,6 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap%27');
 @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap%27');
 
+:focus{
+    outline: none;
+}
+
 @keyframes slide-from-right {
     from {
         left: -50%;
@@ -154,10 +158,35 @@ background-image: linear-gradient(43deg, #4158D0 0%, #C850C0 46%, #FFCC70 100%);
 #navbar > a, #navbar > div > a {
 
     color: black;
+    
     text-decoration: none;
 }
-#navbar > a:not(#navanchor):hover {
-    text-decoration: underline;
+#navbar > a:not(#navanchor) {
+    text-align: center;
+    animation: select-underline-out 0.1s ease-in-out;
+}
+@keyframes select-underline-in {
+    from {
+        border-bottom: 0rem solid black;
+    }
+    to {
+        border-bottom: 0.2rem solid black;
+    }
+}
+@keyframes select-underline-out {
+    to {
+        border-bottom: 0rem solid black;
+    }
+    from {
+        border-bottom: 0.2rem solid black;
+    }
+}
+#navbar > a:not(#navanchor):hover,
+#navbar > a:not(#navanchor):focus {
+    animation: select-underline-in 0.1s ease-in-out;
+    border-bottom: 0.2rem solid black;
+    animation-direction: alternate;
+    
 }
 #emailtext {
     font-size: 1.6rem;
@@ -180,8 +209,115 @@ background-image: linear-gradient(43deg, #4158D0 0%, #C850C0 46%, #FFCC70 100%);
     
     
 }
+@keyframes cursor-blink {
+    0% {
+        border-right: 0.5rem solid white;
+    }
+    50% {
+        border-right: 0.5rem solid black;
+    }
+    100% {
+        border-right: 0.5rem solid white;
+    }
+}
+#typetest {
+    
+    animation: cursor-blink 1s infinite;
+    width: max-content;
+    
+}
+.consoletext {
+    font-family: consolas, sans-serif;
+    color: white;
+    font-weight: 200;
+}
+#aboutexplaination {
+    position: absolute;
+    top: 25%;
+    left: 10%;
+    max-width: 80vw;
+    
+}
+#aboutpython {
+    position: absolute;
+    top: 40%;
+    left: 10%;
+    max-width: 80vw;
+    
+}
+.consolecomment {
+    color: rgb(0, 160, 35); 
+    font-size: 1.5rem;
+}
+#links > a {
+    width: 80px;
+    height: 48px;
+}
 #links > a, #links > a > img {
+    animation: fade-hover-out 0.2s;
     padding: 0 1rem 0 1rem;
     width: 3rem;
     height: 3rem;
+}
+@keyframes fade-hover-in {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0.5;
+    }
+}
+@keyframes fade-hover-out {
+    to {
+        opacity: 1;
+    }
+    from {
+        opacity: 0.5;
+    }
+}
+#links > a:hover, #links > a > img :hover {
+    animation: fade-hover-in 0.2s;
+    opacity: 0.5;
+}
+
+#aboutconsole {
+    min-height: 90vh;
+    
+    background-color: black;
+}
+
+#typetest {
+    margin: 0;
+
+    position: absolute;
+    top: 20%;
+    left: 10%;
+}
+
+#contacts {
+    min-height: 90vh;
+    background: rgb(255,0,116);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+background: -moz-linear-gradient(107deg, rgba(255,0,116,1) 0%, rgba(0,0,255,1) 100%);
+background: -webkit-linear-gradient(107deg, rgba(255,0,116,1) 0%, rgba(0,0,255,1) 100%);
+background: linear-gradient(107deg, rgba(255,0,116,1) 0%, rgba(0,0,255,1) 100%);
+filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#ff0074",endColorstr="#0000ff",GradientType=1);
+}
+@keyframes spin{
+    0% {
+        transform: rotate(0deg);
+    }
+    50% {
+        transform: rotate(180deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+#contacts > h1 {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    animation: spin 1s infinite;
 }
