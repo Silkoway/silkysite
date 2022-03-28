@@ -72,11 +72,43 @@
     color: black;
     padding: 1rem 3rem 1rem 2rem;
     border: 0.3em ridge rgba(90, 90, 90, 0.644);
-    grid-template-columns: 1fr 0.4fr 0.2fr;
+    grid-template-columns: 1fr repeat(3, 0.3fr);
     align-items: center;
 }
+#projects {
+    height: 90vh;
+    
+    background: rgb(255, 255, 255);
+    background: linear-gradient(150deg, rgba(255, 255, 255, 1) 0%, rgba(91, 91, 91, 1) 100%);
+}
+#projects > h1, #projects > h2, #projects > p{
+    animation: project-entry 2s;
+    padding-top: 1rem;
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+}
+#projects > h1 {
+    font-size: 2.2rem;
+    padding-left: 2rem;
+}
+#projects > h2 {
+    font-size: 1.8rem;
+    padding-left: 4rem;
+}
+#projects > p {
+    font-size: 1.2rem;
+    padding-left: 10rem;
+}
 
+@keyframes project-entry {
+    from {
+        transform: translate(-20%, 0);
+    }
+}
 
+.project-entry-animation {
+    
+}
 
 .underline {
     text-decoration: underline;
@@ -151,7 +183,7 @@ background-image: linear-gradient(43deg, #4158D0 0%, #C850C0 46%, #FFCC70 100%);
     font-size: 2rem;
 
 }
-#navabout, #navcontacts {
+#navabout, #navcontacts, #navprojects {
     font-size: 1.6rem;
 }
 
@@ -181,6 +213,7 @@ background-image: linear-gradient(43deg, #4158D0 0%, #C850C0 46%, #FFCC70 100%);
         border-bottom: 0.2rem solid black;
     }
 }
+
 #navbar > a:not(#navanchor):hover,
 #navbar > a:not(#navanchor):focus {
     animation: select-underline-in 0.1s ease-in-out;
