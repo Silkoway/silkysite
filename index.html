@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Silkyway</title>
+</head>
+
+<body>
+    <!-- <script src="code.js"/> -->
+    <script>
+        function reveal() {
+            var reveals = document.querySelectorAll(".reveal");
+
+            for (var i = 0; i < reveals.length; i++) {
+                var windowHeight = window.innerHeight;
+                var elementTop = reveals[i].getBoundingClientRect().top;
+                var elementVisible = 150;
+
+                if (elementTop < windowHeight - elementVisible) {
+                    reveals[i].classList.add("active");
+                } else {
+                    reveals[i].classList.remove("active");
+                }
+            }
+        }
+
+        window.addEventListener("scroll", reveal);
+    </script>
+    <div id="navbar">
+        <a href="/index.html" id="navanchor">Silkysite</a>
+
+        <a href="/about.html" id="navabout">About</a>
+        <a href="/contacts.html" id="navcontacts">Contact</a>
+
+
+    </div>
+    <div id="hello">
+        <h1 id="hellocenter">
+            <span class="light">Hello! I am</span> <span class="underline">Silkyway.</span>
+        </h1>
+        <p id="hellomore">
+            I am a content creator and programmer online!<br>
+            I like making videos and making games and other things for fun.<br>
+            I love programming and it is my main hobby!<br>
+        </p>
+    </div>
+    <img src="img/cloudbar3.png" alt="a row of clouds" class="cloudbar" id="firstbar">
+    <div id="whatiknow">
+        <div class="reveal text2center">
+            <div id="text2things">
+                <h2 id="text2title">Programming languages I know:</h2>
+                <ul id="text2list">
+                    <li>C&num;</li>
+                    <li>Python</li>
+                    <li>HTML & CSS</li>
+                    <li>Javascript & Typescript</li>
+                    <li>Scratch</li>
+                </ul>
+            </div>
+        </div>
+
+
+    </div>
+    <div id="footer">
+        <h3 id="emailtext">Contact: silkywayreal@gmail.com</h3>
+        <div id="links">
+            <a href="https://twitter.com/silkywayreal"><img src="img/twitter.png" alt="twitter"></a>
+            <a href="https://www.youtube.com/channel/UCh6g5lBA9jMshu-ywKleYWA"><img src="img/yt.png"alt="youtube"></a>
+            <a href="https://patreon.com/silkoway"><img src="img/patreon.png" alt="patreon"></a>
+            <a href="https://stackoverflow.com/users/18537585/silkyway"><img src="img/stackoverflow.png"alt="stack overflow"></a>
+        </div>
+
+
+    </div>
+</body>
+
+</html>
