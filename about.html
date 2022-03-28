@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Silkyway</title>
+</head>
+
+<body>
+    <!-- <script src="code.js"/> -->
+
+    <script defer>
+        window.onload = () => {const txts = [];
+
+        const textDisplay = document.getElementById('typetest')
+        const phrases = ["Console.WriteLine(\"I am a C# programmer using unity.\");", "console.log(\"I make random projects with node.js\");", "print(\"I make bad little console games with python.\")", "print(\"I used to use lua to make some half-baked roblox games.\")"]
+        let i = 0
+        let j = 0
+        let currentPhrase = []
+        let isDeleting = false
+        let isEnd = false
+
+        function loop() {
+            isEnd = false
+            textDisplay.innerHTML = currentPhrase.join('')
+
+            if (i < phrases.length) {
+
+                
+
+                if (!isDeleting && j <= phrases[i].length) {
+                    currentPhrase.push(phrases[i][j])
+                    j++
+                    textDisplay.innerHTML = currentPhrase.join('')
+                }
+
+                if (isDeleting && j <= phrases[i].length) {
+                    currentPhrase.pop(phrases[i][j])
+                    j--
+                    textDisplay.innerHTML = currentPhrase.join('')
+                }
+
+                if (j == phrases[i].length) {
+                    isEnd = true
+                    isDeleting = true
+                }
+
+                if (isDeleting && j === 0) {
+                    currentPhrase = []
+                    isDeleting = false
+                    i++
+                    if (i === phrases.length) {
+                        i = 0
+                    }
+                }
+                
+            }
+            const spedUp = Math.random() * (80 - 50) + 50
+            const normalSpeed = Math.random() * (300 - 200) + 200
+            const time = isEnd ? 2000 : isDeleting ? spedUp : normalSpeed
+            setTimeout(loop, time)
+        }
+
+        loop()}
+    </script>
+    <div id="navbar">
+        <a href="/index.html" id="navanchor">Silkysite</a>
+
+        <a href="about.html" id="navabout">About</a>
+        <a href="contacts.html" id="navcontacts">Contact</a>
+
+
+    </div>
+    <div id="aboutconsole">
+        <h1 id="typetest" class="consoletext"></h1>
+        <h1 class="consoletext consolecomment" id="aboutexplaination">
+            /&ast; 
+                I am a <em>programmer</em>/youtuber on the internet!
+                I sometimes make little games or just projects that come in my mind with node.js.
+                I like making little programs with absolutely no use with python.
+            &ast;/
+        </h1>
+        <h1 class="consoletext consolecomment" id="aboutpython">
+            """<br>
+            Python, I mainly use this to solve math questions that just isn't feasible to do manually.
+            I <em>kinda</em> like it but it's not very efficient.<br>
+            """
+
+        </h1>
+    </div>
+    
+    <div id="footer">
+        <h3 id="emailtext">Contact: silkywayreal@gmail.com</h3>
+        <div id="links">
+            <a href="https://twitter.com/silkywayreal"><img src="img/twitter.png" alt="twitter"></a>
+            <a href="https://www.youtube.com/channel/UCh6g5lBA9jMshu-ywKleYWA"><img src="img/yt.png" alt="youtube"></a>
+            <a href="https://patreon.com/silkoway"><img src="img/patreon.png" alt="patreon"></a>
+            <a href="https://stackoverflow.com/users/18537585/silkyway"><img src="img/stackoverflow.png"
+                    alt="stack overflow"></a>
+        </div>
+
+
+    </div>
+</body>
+
+</html>
